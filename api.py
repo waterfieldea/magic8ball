@@ -1,8 +1,6 @@
 from flask import Flask
 from flask import request
 
-from eightball import EightBall
-
 app = Flask(__name__)
 
 
@@ -14,7 +12,7 @@ def index():
 @app.route("/answer")
 def answer():
     question = request.args.get('question')
-    eightball = EightBall()
+    eightball = eightball()
     return eightball.ask_question(question)
 
 
