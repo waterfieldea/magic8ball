@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import request
 
-from magic8ball.app.eightball import EightBall
+from eightball import EightBall
 
 app = Flask(__name__)
 
