@@ -1,5 +1,10 @@
 # magic8ball
 
+###dependencies
+```
+pip install -r requirements.txt
+```
+
 ### to start
 ```
 python manage.py runserver
