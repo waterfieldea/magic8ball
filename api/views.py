@@ -1,5 +1,6 @@
 from django.http import HttpResponse, HttpResponseBadRequest
 from api.eightball import *
+import json
 
 
 def index(request):
@@ -12,4 +13,6 @@ def answer(request):
         return HttpResponseBadRequest("Missing required question query parameter")
     else:
         eightball = EightBall()
-        return HttpResponse("<h1>{0}</h1>".format(eightball.ask_question(question)))
+        answer = eightball.ask_question(question)
+        payload = json.dumps({"question": question, "answer": answer})
+        return HttpResponse(payload)
